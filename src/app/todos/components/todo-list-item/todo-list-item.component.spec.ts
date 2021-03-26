@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PushModule } from '@ngrx/component';
 import { TodoListItemComponent } from './todo-list-item.component';
 
 describe('TodoListItemComponent', () => {
@@ -7,6 +8,7 @@ describe('TodoListItemComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [PushModule],
       declarations: [TodoListItemComponent],
     });
     fixture = TestBed.createComponent(TodoListItemComponent);

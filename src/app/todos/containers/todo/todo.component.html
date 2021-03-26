@@ -1,22 +1,22 @@
 <header class="header">
   <h1>todos</h1>
   <app-new-todo
-    *ngIf="(loading$ | async) === false; else loading"
+    *ngIf="(loading$ | ngrxPush) === false; else loading"
     (addTodo)="onAddTodo($event)"
   ></app-new-todo>
 </header>
 <app-todo-list
-  *ngIf="hasTodos$ | async"
-  [todos]="filteredTodos$ | async"
+  *ngIf="hasTodos$ | ngrxPush"
+  [todos]="filteredTodos$ | ngrxPush"
   (toggle)="onToggle($event)"
   (update)="onUpdate($event)"
   (delete)="onDelete($event)"
 ></app-todo-list>
 <app-footer
-  *ngIf="hasTodos$ | async"
-  [hasCompletedTodos]="hasCompletedTodos$ | async"
-  [undoneTodosCount]="undoneTodosCount$ | async"
-  [currentFilter]="currentFilter$ | async"
+  *ngIf="hasTodos$ | ngrxPush"
+  [hasCompletedTodos]="hasCompletedTodos$ | ngrxPush"
+  [undoneTodosCount]="undoneTodosCount$ | ngrxPush"
+  [currentFilter]="currentFilter$ | ngrxPush"
   (filter)="onFilter($event)"
   (clearCompleted)="onClearCompleted()"
 ></app-footer>

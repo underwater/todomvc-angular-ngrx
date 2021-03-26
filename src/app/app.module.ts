@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { PushModule } from '@ngrx/component';
 import { AppComponent } from './app.component';
 import {
   FooterComponent,
@@ -28,6 +29,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    PushModule,
     HttpClientModule,
     RouterModule.forRoot(routes, { useHash: true }),
   ],

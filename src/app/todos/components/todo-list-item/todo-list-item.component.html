@@ -1,7 +1,7 @@
 <li
   *ngIf="todo as todo"
   [class.completed]="todo.completed"
-  [class.editing]="editing"
+  [class.editing]="editing$ | ngrxPush"
 >
   <div class="view">
     <input
@@ -19,7 +19,7 @@
     class="edit"
     type="text"
     #textInput
-    [hidden]="editing"
+    [hidden]="editing$ | ngrxPush"
     [value]="todo.text"
     (keyup.enter)="updateText(todo.id, textInput.value)"
     (blur)="updateText(todo.id, textInput.value)"
